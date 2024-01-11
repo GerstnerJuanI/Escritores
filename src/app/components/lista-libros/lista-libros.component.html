@@ -1,0 +1,12 @@
+<div class="libros">
+    @for (libro of libros; track $index) {
+        <div class="libro" [routerLink]="['/libros', libro.id]" >
+            <div class="libro-img">
+                <img [src]="libro.imagen" alt="">
+            </div>
+            <div class="libro-info">
+                <h3>{{ libro.titulo }}</h3>
+            </div>
+        </div>
+    }
+</div>

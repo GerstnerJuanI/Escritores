@@ -1,0 +1,21 @@
+<select (change)="onChange($event)">
+    <option value="">todos</option>
+    <option value="españa">españa</option>
+    <option value="reino unido">reino unido</option>
+    <option value="canadá">canadá</option>
+    <option value="chile">chile</option>
+</select>
+<div class="escritores">
+    @for (escritor of arrEscritores; track $index) {
+        <div class="escritor" [routerLink]="['/escritores', escritor.id]" >
+            <div class="escritor-img">
+                <img [src]="escritor.imagen" alt="">
+            </div>
+            <div class="escritor-info">
+                <h3>{{ escritor.nombre }}, {{escritor.apellidos}}</h3>
+                <p>{{ escritor.pais }}</p>
+            </div>
+        </div>
+    }
+
+</div>
